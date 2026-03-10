@@ -1,133 +1,330 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bilhete Liberado</title>
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+    <meta charset="UTF-8">
 
-fbq('init', '776851038631940');
-    fbq('init', '1597120738219056');
-fbq('track', 'PageView');
-</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle at center, #0f2a1f 0%, #000000 70%);
-    color: white;
-    text-align: center;
+    <title>Comunidade do Jota</title>
+
+
+
+    <script>
+
+    !function(f,b,e,v,n,t,s)
+
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+    n.queue=[];t=b.createElement(e);t.async=!0;
+
+    t.src=v;s=b.getElementsByTagName(e)[0];
+
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+
+
+    // Inicia os IDs que vimos nos seus prints
+
+    fbq('init', '1425994342559573'); // Pixel 1
+
+    fbq('init', '1986985358836188'); // Pixel 2
+
+    fbq('init', '1754894198818042'); // Pixel 3 
+
+     fbq('init', '1285074343124616'); // Pixel 4
+
+     fbq('init', '3742593532549192'); // Pixel 5
+
+
+
+    fbq('track', 'PageView');
+
+    </script>
+
+
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Arial', sans-serif;
+
+        }
+
+
+
+        body {
+
+            background-color: #000;
+
+            color: #fff;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+
+        }
+
+
+
+        .lp-container {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            height: 100vh;
+
+            position: relative;
+
+            /* Ajustei o gradiente para não "sujar" as cores do topo */
+
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 80%), url('jp-bet.jpg');
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding: 30px 10px;
+
+            text-align: center;
+
+        }
+
+
+
+        .headline-container {
+
+            background-color: #FFFFF; /* Vermelho Puro */
+
+            padding: 15px;
+
+            margin-bottom: 20px;
+
+            /* Removi o skew para os nomes ficarem retos e legíveis se preferir, ou mantenha: */
+
+            border-radius: 4px;
+
+        }
+
+
+
+        .headline-text {
+
+            color: #ffffff !important; /* Força o branco puro */
+
+            font-size: 26px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            line-height: 1.2;
+
+        }
+
+
+
+        .description {
+
+            background-color: #ffffff;
+
+            color: #000000 !important; /* Força o preto puro */
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            padding: 12px 15px;
+
+            margin-bottom: 30px;
+
+            line-height: 1.4;
+
+            border-radius: 8px;
+
+        }
+
+
+
+        .btn-entrar {
+
+            background-color: #ff0000;
+
+            color: #fff !important;
+
+            text-decoration: none;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            text-transform: uppercase;
+
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+
+            transition: 0.3s;
+
+            margin-bottom: 30px;
+
+            display: block;
+
+        }
+
+
+
+        .btn-entrar:active { transform: scale(0.95); }
+
+
+
+        .social-proof {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            background: rgba(0,0,0,0.5);
+
+            padding: 10px;
+
+            border-radius: 20px;
+
+        }
+
+
+
+        .avatars { display: flex; }
+
+        .avatars img {
+
+            width: 35px;
+
+            height: 35px;
+
+            border-radius: 50%;
+
+            border: 2px solid #fff;
+
+            margin-left: -12px;
+
+        }
+
+        .avatars img:first-child { margin-left: 0; }
+
+        .proof-text { font-size: 13px; color: #eee; font-weight: bold; } .highlight-red {
+
+    color: #ff0000 !important;
+
+    font-weight: 900;
+
 }
 
-.container {
-    padding: 20px 20px;
-}
-
-h1 {
-    font-size: 38px;
-    color: #ff0000;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.subtext {
-    font-size: 20px;
-    color: #d9d9d9;
-    margin-bottom: 40px;
-}
-
-/* BOTÃO */
-.button {
-    display: inline-block;
-    background-color: #ff0000;
-    color: white;
-    padding: 18px 40px;
-    font-size: 22px;
-    font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    animation: pulse 1.5s infinite;
-}
-
-.button:hover {
-    background-color: #cc0000;
-}
-
-/* ANIMAÇÃO PULSO */
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255,0,0,0); }
-    100% { transform: scale(1); }
-}
-
-.alert-box {
-    margin-top: 60px;
-    padding: 30px;
-    
- 
-}
-
-.alert-box h2 {
-    color: #00ff66;
-    margin-bottom: 35px;
-}
-
-.alert-box p {
-    color: #cccccc;
-}
-
-.footer {
-    margin-top: 60px;
-    font-size: 14px;
-    color: #777;
-}
-</style>
+    </style>
 
 </head>
+
 <body>
 
-<img src="foto-perfil-6.png" alt="Foto do Tipster" style="width: 350px; height: auto; object-fit: contain; margin-bottom: 20px;">
 
-    <h1>PARTICIPE DA MINHA<br>COMUNIDADE NO WHATSAPP</h1>
 
-    <div class="subtext">
-        Clique no botão abaixo para receber o seu bilhete!
+    <div class="lp-container">
+
+        <div class="headline-container">
+
+            <h1 class="headline-text">ACESSO LIBERADO PARA MINHA<br>ENTRADA PESSOAL</h1>
+
+        </div>
+
+
+
+        <p class="description">
+
+            Fale comigo <span class="highlight-red">AGORA</span> para ter acesso ao meu bilhete com as melhores análises para os jogos de <span class="highlight-red">HOJE</span>.
+
+        </p>
+
+
+
+        <a href="https://redirecionar.online/" class="btn-entrar" onclick="trackClick()">GARANTIR O BILHETE</a>
+
+
+
+        <div class="social-proof">
+
+            <div class="avatars">
+
+                <img src="https://i.pravatar.cc/100?u=11" alt="Membro">
+
+                <img src="https://i.pravatar.cc/100?u=12" alt="Membro">
+
+                <img src="https://i.pravatar.cc/100?u=13" alt="Membro">
+
+                <img src="https://i.pravatar.cc/100?u=14" alt="Membro">
+
+            </div>
+
+            <span class="proof-text">Pessoas reais com resultados reais</span>
+
+        </div>
+
     </div>
 
-    <a href="https://chat.whatsapp.com/IQOI11IrS537LQYbYJ6260" class="button" onclick="trackClick()">PEGAR AGORA</a>
 
-    <div class="alert-box">
-        <h2>⚠ Entre e aguarde</h2>
-        <p>As entradas serão enviadas em instantes!</p>
-    </div>
 
-    <div class="footer">
-        Copyright © 2026 – Todos os direitos reservados
-    </div>
+    <script>
 
-</div>
+    function trackClick() {
 
-<script>
-function trackClick() {
-    fbq('track', 'Lead'); // Evento padrão Lead
-    // Se quiser redirecionar depois do clique, descomente:
-    // window.location.href = "https://seulink.com";
-}
-</script>
+        // Dispara Lead para todos os Pixels iniciados no topo
+
+        fbq('track', 'Search');
+        fbq('track', 'Contact');
+        fbq('track', 'Subscribe');
+        fbq('track', 'Lead');
+
+        console.log("Lead disparado!");
+
+    }
+
+    </script>
+
+
 
 </body>
+
 
 
 </html>
