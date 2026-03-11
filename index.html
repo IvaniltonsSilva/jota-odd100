@@ -52,46 +52,47 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 30px 10px;
+            padding: 30px 15px;
             text-align: center;
         }
 
-        /* ESTILO DO CONTADOR ODD 100 */
+        /* AJUSTE DO CONTADOR - NÚMEROS MENORES */
         .odd-multiplier-box {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-family: 'Arial Black', sans-serif;
         }
 
         .odd-label {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            color: #ccc;
-            letter-spacing: 2px;
+            color: #aaa;
+            letter-spacing: 1px;
             display: block;
+            margin-bottom: -5px;
         }
 
         #multiplier {
-            font-size: 65px;
+            font-size: 48px; /* Reduzi de 65px para 48px */
             font-weight: 900;
             color: #ffffff;
             line-height: 1;
+            transition: color 0.3s ease;
         }
 
         .odd-x {
             color: #ff0000;
-            font-size: 45px;
+            font-size: 32px; /* Reduzi de 45px para 32px */
+            transition: color 0.3s ease;
         }
 
         .headline-container {
-            background-color: transparent; 
-            padding: 15px;
+            padding: 10px;
             margin-bottom: 10px;
-            border-radius: 4px;
         }
 
         .headline-text {
             color: #ffffff !important;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
             text-transform: uppercase;
             line-height: 1.2;
@@ -100,10 +101,10 @@
         .description {
             background-color: #ffffff;
             color: #000000 !important;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
-            padding: 12px 15px;
-            margin-bottom: 25px;
+            padding: 12px;
+            margin-bottom: 20px;
             line-height: 1.4;
             border-radius: 8px;
         }
@@ -112,51 +113,45 @@
             background-color: #ff0000;
             color: #fff !important;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             padding: 18px;
             border-radius: 12px;
             text-transform: uppercase;
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             transition: 0.3s;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             display: block;
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
-
-        .btn-entrar:active { transform: scale(0.95); }
 
         .social-proof {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: rgba(0,0,0,0.5);
-            padding: 10px;
+            background: rgba(0,0,0,0.6);
+            padding: 8px;
             border-radius: 20px;
         }
 
-        .avatars { display: flex; }
         .avatars img {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             border: 2px solid #fff;
-            margin-left: -12px;
+            margin-left: -10px;
         }
         .avatars img:first-child { margin-left: 0; }
-        .proof-text { font-size: 13px; color: #eee; font-weight: bold; } 
+        .proof-text { font-size: 12px; color: #ddd; font-weight: bold; } 
         
-        .highlight-red {
-            color: #ff0000 !important;
-            font-weight: 900;
-        }
+        .highlight-red { color: #ff0000 !important; font-weight: 900; }
     </style>
 </head>
 <body>
@@ -164,19 +159,19 @@
     <div class="lp-container">
         
         <div class="odd-multiplier-box">
-            <span class="odd-label">Odd Atual</span>
+            <span class="odd-label">Odd do Bilhete</span>
             <span id="multiplier">1.00</span><span class="odd-x">x</span>
         </div>
 
         <div class="headline-container">
-            <h1 class="headline-text">ACESSO LIBERADO PARA MINHA<br>ENTRADA PESSOAL</h1>
+            <h1 class="headline-text">ACESSO LIBERADO PARA MINHA<br>ODD 100</h1>
         </div>
 
         <p class="description">
-            Fale comigo <span class="highlight-red">AGORA</span> para ter acesso ao meu bilhete com as melhores análises para os jogos de <span class="highlight-red">HOJE</span>.
+            Fale comigo <span class="highlight-red">AGORA</span> para ter acesso ao meu bilhete com a melhor anális de<span class="highlight-red">HOJE</span>.
         </p>
 
-        <a href="https://go.aff.estrelabetpartners.com/hdjm0w5b?aposta=PNV39FBCTA8&campaign_id=29199&utm_campaign=TDODD100" class="btn-entrar" onclick="trackClick()">GARANTIR O BILHETE</a>
+        <a href="https://go.aff.estrelabetpartners.com/hdjm0w5b?aposta=PNV39FBCTA8&campaign_id=29199&utm_campaign=TDODD100" class="btn-entrar" onclick="trackClick()">PEGAR ODD 100</a>
 
         <div class="social-proof">
             <div class="avatars">
@@ -190,35 +185,40 @@
     </div>
 
     <script>
-    // Função para animar a Odd
     function animateOdd() {
         const display = document.getElementById('multiplier');
+        const oddX = document.querySelector('.odd-x');
         let current = 1.00;
         const target = 100.00;
-        const duration = 3500; // Tempo em milissegundos
+        const duration = 4000; // 4 segundos para subir
         const startTime = performance.now();
 
         function update(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Ease-out para desacelerar no final e dar suspense
+            // Suavização da subida
             const easeOut = 1 - Math.pow(1 - progress, 3);
             current = 1 + (target - 1) * easeOut;
 
             display.innerText = current.toFixed(2);
 
+            // Transição para o verde no final
+            if (current >= 98) {
+                display.style.color = "#00ff88"; // Verde Green
+                display.style.textShadow = "0 0 15px rgba(0, 255, 136, 0.6)";
+                oddX.style.color = "#00ff88";
+            }
+
             if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
                 display.innerText = "100.00";
-                display.style.color = "#ff0000"; // Fica vermelho no final
             }
         }
         requestAnimationFrame(update);
     }
 
-    // Inicia a animação quando a página carrega
     window.onload = animateOdd;
 
     function trackClick() {
@@ -226,7 +226,6 @@
         fbq('track', 'Contact');
         fbq('track', 'Subscribe');
         fbq('track', 'Lead');
-        console.log("Lead disparado!");
     }
     </script>
 
